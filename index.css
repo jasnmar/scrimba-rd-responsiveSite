@@ -118,12 +118,17 @@ header,
 
 .section-two-image-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: .5em;
+}
+
+.feature-item {
+    flex: 1 220px;
 }
 
 .feature-image {
     border-radius: 4.6px;
-    margin-bottom: 1em;
+    width: 100%;
 }
 
 footer {
@@ -149,16 +154,6 @@ ul {
 
 /* ----- MEDIA QUERIES ----- */
 
-@media (min-width: 480px) {
-    .section-two-image-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    .feature-image {
-        width: 48.8%;        
-    }
-}
 @media(min-width: 768px) {
     header,
     section,
@@ -178,9 +173,13 @@ ul {
     h2 {
         font-size: 1.75rem;
     }
+    header .container, 
     ul {
         display: flex;
         justify-content: right;
+    }
+    header .container {
+        justify-content: space-between;
     }
     .subheading {
         font-size: 1.25rem;
@@ -194,7 +193,10 @@ ul {
     nav {
         margin-top: 1em;
     }
-    
+    h1 {
+ 
+        text-align: center;
+    }
     li:not(:last-child) {
         border-bottom: 1px dotted #a190b6;
     }
